@@ -1,0 +1,61 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    "DNX,Version=v4.5.1": {
+      "RabbitMQ.Client/3.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/RabbitMQ.Client.dll": {}
+        },
+        "runtime": {
+          "lib/net45/RabbitMQ.Client.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x86": {
+      "RabbitMQ.Client/3.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/RabbitMQ.Client.dll": {}
+        },
+        "runtime": {
+          "lib/net45/RabbitMQ.Client.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x64": {
+      "RabbitMQ.Client/3.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/RabbitMQ.Client.dll": {}
+        },
+        "runtime": {
+          "lib/net45/RabbitMQ.Client.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RabbitMQ.Client/3.6.1": {
+      "type": "package",
+      "sha512": "hq7lbvwxJI8e6TvVbizEQ0LyBVB7xGibheCkoVtWMSDIP72k1hLIJSGk884uxUM12uJkWb9uVjIsBPu9/hjPTw==",
+      "files": [
+        "lib/net45/RabbitMQ.Client.dll",
+        "lib/net45/RabbitMQ.Client.xml",
+        "lib/netcore45/RabbitMQ.Client.dll",
+        "lib/netcore45/RabbitMQ.Client.xml",
+        "RabbitMQ.Client.3.6.1.nupkg",
+        "RabbitMQ.Client.3.6.1.nupkg.sha512",
+        "RabbitMQ.Client.nuspec",
+        "RabbitMQ.Client.nuspec~"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [],
+    "DNX,Version=v4.5.1": [
+      "RabbitMQ.Client >= 3.6.1"
+    ]
+  }
+}

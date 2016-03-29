@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0-*",
+  "description": "Producer Console Application",
+  "authors": [ "Shishir Kumar Mishra" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+  },
+
+  "commands": {
+    "Producer": "Producer"
+  },
+
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {
+        "RabbitMQ.Client": "3.6.1"
+      }
+    }
+  }
+}

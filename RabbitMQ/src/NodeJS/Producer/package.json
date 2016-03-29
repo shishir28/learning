@@ -1,0 +1,14 @@
+{
+  "name": "rabbitmqproducer",
+  "version": "1.0.0",
+  "description": "Sample application to work as producer for rabbitmq based application",
+  "main": "producer.js",
+  "dependencies": {
+    "amqplib": "^0.4.1",
+    "jsonschema": "^1.1.0",
+    "node-windows": "^0.1.11"
+  },
+  "devDependencies": {},
+  "author": "Shishir Kumar Mishra",
+  "license": "ISC"
+}
