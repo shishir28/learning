@@ -1,15 +1,13 @@
-﻿using RabbitMQ.Client;
-using System;
+﻿using System;
 using Newtonsoft.Json;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Collections.Generic;
 using System.Text;
+using RabbitMQ.Client;
+
 namespace Producer
 {
     public class Program
     {
-       
         public static void Main(string[] args)
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
@@ -19,14 +17,12 @@ namespace Producer
                 ch.ExchangeDeclare(exchange: "sampleTopic", type: "topic", durable: true);
                 var key = (args.Length > 0) ? args[0] : "dummyKey";
 
-                // var messageTobeSent = (args.Length > 1) ? string.Join(" ", args.Skip(1).ToArray()) : "Hello Shishir from .NET";
-
                 var messageTobeSent = new Email
                 {
                     body = "Hello .Net  World",
                     subject = "Hello  .NET Message",
                     from = new EmailPerson { firstName = "JohnDot", lastName = "DoeNET", address = "shishir28@gmail.com" },
-                    toList = new System.Collections.Generic.List<EmailPerson> { new EmailPerson { firstName = "JaneDot", lastName = "DoeNET", address = "shishir28@live.com" } }
+                    toList = new List<EmailPerson> { new EmailPerson { firstName = "JaneDot", lastName = "DoeNET", address = "shishir28@live.com" } }
                 };
 
                 ch.BasicPublish(exchange: "sampleTopic",
@@ -36,6 +32,5 @@ namespace Producer
                 Console.WriteLine(" [x] Sent message with [0] and content [1]", key, messageTobeSent);
             }
         }
-
     }
 }

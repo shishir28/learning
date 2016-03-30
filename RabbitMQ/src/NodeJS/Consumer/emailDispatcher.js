@@ -32,7 +32,6 @@ module.exports = {
 
         transporter.sendMail(message, function (error, info) {
             if (error) {
-                console.log('Error occurred');
                 console.log(error.message);
                 return;
             }
