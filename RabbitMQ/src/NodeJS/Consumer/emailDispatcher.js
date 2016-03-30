@@ -1,4 +1,4 @@
-﻿var nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 String.prototype.format = function () {
     var content = this;
     for (var i = 0; i < arguments.length; i++) {
@@ -14,15 +14,15 @@ module.exports = {
         var transporter = nodemailer.createTransport({
             service: 'Gmail',
             auth: {
-                user: 'a@b.com',
-                pass: 'ababababaababa'
+                user: 'a@gmail.com',
+                pass: 'xyz'
             },
             logger: false, // log to console
             debug: false // include SMTP traffic in the logs
         }, {
-            from: '{0}  {1} <{2}>'.format(emailObject.from.firstName, emailObject.from.lastName, emailObject.from.address) 
+            from: '{0}  {1} <{2}>'.format(emailObject.from.firstName, emailObject.from.lastName, emailObject.from.address)
         });
-       
+
         var message = {
             // Comma separated list of recipients
             to: '{0}  {1} <{2}>'.format(emailObject.toList[0].firstName, emailObject.toList[0].lastName, emailObject.toList[0].address),

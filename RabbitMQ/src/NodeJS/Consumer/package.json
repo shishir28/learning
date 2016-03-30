@@ -1,15 +1,14 @@
 {
-  "name": "rabbitmqconsumer",
-  "version": "1.0.0",
-  "description": "Sample application to work as consumer for rabbitmq based application",
-  "main": "consumer.js",
-  "dependencies": {
-    "amqplib": "^0.4.1",
-    "jsonschema": "^1.1.0",
-    "node-windows": "^0.1.11",
-    "nodemailer": "^2.3.0"
-  },
-  "devDependencies": {},
-  "author": "Shishir Kumar Mishra",
-  "license": "ISC"
+    "name": "rabbitmqconsumer",
+    "version": "1.0.0",
+    "description": "Sample application to work as consumer for rabbitmq based application",
+    "main": "consumer.js",
+    "dependencies": {
+        "amqplib": "^0.4.1",
+        "jsonschema": "^1.1.0",
+        "nodemailer": "^2.3.0"
+    },
+    "devDependencies": {},
+    "author": "Shishir Kumar Mishra",
+    "license": "ISC"
 }
