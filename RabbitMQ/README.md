@@ -1,1 +1,1 @@
-Sample application which has .net and node js producer but only nodejs consumer.
+Sample application which has .net and node js producer. Consumer is only written in nodejs.
