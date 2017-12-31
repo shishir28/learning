@@ -18,6 +18,7 @@ struct Article {
         uint indexed _id, 
         address  _seller, 
         string _name ,
+        string _description,
         uint256 _price
         ) ;
 
@@ -39,7 +40,7 @@ struct Article {
            _description, 
            _price
         );
-        sellArticleEvent(articleCounter, msg.sender,_name, _price);
+        sellArticleEvent(articleCounter, msg.sender,_name,_description, _price);
     }
 
 // throw , assert , require and revert consequnces are 
