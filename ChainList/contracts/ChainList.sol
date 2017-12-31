@@ -14,7 +14,10 @@ struct Article {
     
     mapping(uint => Article) public articles; 
     uint articleCounter;
-    
+    address owner; 
+
+
+
     event sellArticleEvent (
         uint indexed _id, 
         address  _seller, 
@@ -29,7 +32,17 @@ struct Article {
         address indexed _buyer, 
         string _name ,
         uint256 _price) ;
+
+        //modifiers 
+        modifier onlyOwner() {
+            require(msg.sender == owner);
+            _;
+        }
     
+function ChainList() {
+    owner = msg.sender;
+}
+
     function sellArticle(string _name, string _description, uint256  _price) public {
         articleCounter++;
 
@@ -89,6 +102,11 @@ struct Article {
        }
 
        return (forSales);
+   }
+
+   // kill the contract 
+   function kill() onlyOwner {
+       selfdestruct(owner);
    }
 }
 
