@@ -1,6 +1,8 @@
 pragma solidity ^0.4.11;
 
-contract ChainList {
+import  "./Owned.sol";
+
+contract ChainList is Owned{
    
 struct Article {
         uint id;
@@ -14,8 +16,6 @@ struct Article {
     
     mapping(uint => Article) public articles; 
     uint articleCounter;
-    address owner; 
-
 
 
     event sellArticleEvent (
@@ -32,16 +32,6 @@ struct Article {
         address indexed _buyer, 
         string _name ,
         uint256 _price) ;
-
-        //modifiers 
-        modifier onlyOwner() {
-            require(msg.sender == owner);
-            _;
-        }
-    
-function ChainList() {
-    owner = msg.sender;
-}
 
     function sellArticle(string _name, string _description, uint256  _price) public {
         articleCounter++;
