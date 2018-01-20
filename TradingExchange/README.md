@@ -1,3 +1,3 @@
 # TradingExchange
 
-Sample Trading to manage and trade  tokens  
+Sample Trading exchange to manage and trade ethereum based  tokens.

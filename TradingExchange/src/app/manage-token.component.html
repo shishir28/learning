@@ -1,0 +1,101 @@
+
+
+<div class="row">
+        <div class="jumbotron ">
+           <h1 class="display-4"> Manage Token</h1>
+           <div class="col-lg-8">
+              <p>
+                 This page is intended for the FIXED Token as sample only. You can send token and you can approve token.
+                 Additionally you can add a token to the exchange provided in this example.
+              </p>
+           </div>
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-lg-6">
+           <div class="card  card-outline-info">
+              <div class="card-header card-inverse card-info">
+                 Send Token
+              </div>
+              <div class="card-block">
+                 <form>
+                    <div class="form-group row">
+                       <label for="inputTokenAmount" class="col-sm-2 col-form-label">Amount in Token</label>
+                       <div class="col-sm-10">
+                          <input type="text" class="form-control col-sm-8" id="inputTokenAmount" placeholder="BTC">
+                       </div>
+                    </div>
+                    <div class="form-group  row">
+                       <label for="inputToAddress" class="col-sm-2 col-form-label">To Address</label>
+                       <div class="col-sm-10">
+                          <input type="text" class="form-control col-sm-8" id="inputToAddress" placeholder="eg. 0x123f681646d4a755815f9cb19e1acc8565a0c2ac">
+                       </div>
+                    </div>
+                    <div class="form-group row offset-sm-2 col-sm-10">
+                       <button type="button" class="btn btn-default">Send Token</button>
+                    </div>
+                 </form>
+                 <footer>Send token from your wallet to another address</footer>
+              </div>
+           </div>
+        </div>
+        <div class="col-lg-6">
+           <div class="card  card-outline-info">
+              <div class="card-header card-inverse card-info">
+                 Approve Token Allowance
+              </div>
+              <div class="card-block">
+                 <form>
+                    <div class="form-group row">
+                       <label for="inputTokenAmount" class="col-sm-2 col-form-label">Amount in Token</label>
+                       <div class="col-sm-10">
+                          <input type="text" class="form-control col-sm-8" id="inputTokenAmount" placeholder="BTC">
+                       </div>
+                    </div>
+                    <div class="form-group  row">
+                       <label for="inputToAddress" class="col-sm-2 col-form-label">To Address</label>
+                       <div class="col-sm-10">
+                          <input type="text" class="form-control col-sm-8" id="inputToAddress" placeholder="eg. 0x123f681646d4a755815f9cb19e1acc8565a0c2ac">
+                       </div>
+                    </div>
+                    <div class="form-group row offset-sm-2 col-sm-10">
+                       <button type="button" class="btn btn-default">Send Token</button>
+                    </div>
+                 </form>
+                 <footer>
+                    Approve the address to be allowed to send a token from your address to another address. This is important for the Exchange. When you fund the token in the exchange then it will deduct in your name the token from your address to the token address. 
+                 </footer>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="row" style="margin-top:25px">
+        <div class="col-lg-12">
+           <div class="card ">
+              <div class="card-header card-inverse card-info">
+                 Add Token to Exchange
+              </div>
+              <div class="card-block">
+                 <form>
+                    <div class="form-group row">
+                       <label for="inputTokenName" class="col-sm-2 col-form-label">Token Name</label>
+                       <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputTokenName" placeholder="BTC">
+                       </div>
+                    </div>
+                    <div class="form-group  row">
+                       <label for="inputTokenAddress" class="col-sm-2 col-form-label">Token Address</label>
+                       <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputTokenAddress" placeholder="eg. 0x123f681646d4a755815f9cb19e1acc8565a0c2ac">
+                       </div>
+                    </div>
+                    <div class="form-group  row offset-sm-2 col-sm-10">
+                       <button type="button" class="btn btn-default">Add To Exchange</button>
+                    </div>
+                 </form>
+              </div>
+           </div>
+        </div>
+     </div>
+     
+     
