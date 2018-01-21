@@ -1,0 +1,618 @@
+{
+  "contractName": "Dataset",
+  "abi": [],
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a72305820a4a8750f998228723783c5147edd7cd00fa4e0dffe7ba7d4a55d4b9589d8e45a0029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a72305820a4a8750f998228723783c5147edd7cd00fa4e0dffe7ba7d4a55d4b9589d8e45a0029",
+  "sourceMap": "26:651:7:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "26:651:7:-;;;;;",
+  "source": "pragma solidity ^0.4.18;\n\nlibrary Dataset {\n\n    struct Offer {\n        uint amount;\n        address who;\n    }\n\n    struct OrderBook {\n        uint higherPrice;\n        uint lowerPrice;\n\n        mapping (uint => Offer) offers;\n        \n        uint offers_key;\n        uint offers_length;\n    }\n\n    struct Token {\n\n        address tokenContract;\n        string symbolName;\n\n        uint currentBuyPrice ;\n        uint lowestBuyPrice ;\n        uint amountBuyPrice ;\n\n        uint currentSellPrice ;\n        uint highestSellPrice ;\n        uint amountSellPrice ;\n        \n        mapping(uint => OrderBook) buyBook;\n        \n        mapping(uint => OrderBook) sellBook;\n    }\n}\n\n",
+  "sourcePath": "/home/shishir/Work/learning/TradingExchange/contracts/library/Dataset.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/shishir/Work/learning/TradingExchange/contracts/library/Dataset.sol",
+      "exportedSymbols": {
+        "Dataset": [
+          386
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".18"
+          ]
+        },
+        "id": 342,
+        "name": "PragmaDirective",
+        "src": "0:24:7"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "library",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            386
+          ],
+          "name": "Dataset",
+          "scope": 387
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "Dataset.Offer",
+              "name": "Offer",
+              "scope": 386,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "amount",
+                  "scope": 347,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 343,
+                    "name": "ElementaryTypeName",
+                    "src": "72:4:7"
+                  }
+                ],
+                "id": 344,
+                "name": "VariableDeclaration",
+                "src": "72:11:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "who",
+                  "scope": 347,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 345,
+                    "name": "ElementaryTypeName",
+                    "src": "93:7:7"
+                  }
+                ],
+                "id": 346,
+                "name": "VariableDeclaration",
+                "src": "93:11:7"
+              }
+            ],
+            "id": 347,
+            "name": "StructDefinition",
+            "src": "49:62:7"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Dataset.OrderBook",
+              "name": "OrderBook",
+              "scope": 386,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "higherPrice",
+                  "scope": 360,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 348,
+                    "name": "ElementaryTypeName",
+                    "src": "144:4:7"
+                  }
+                ],
+                "id": 349,
+                "name": "VariableDeclaration",
+                "src": "144:16:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "lowerPrice",
+                  "scope": 360,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 350,
+                    "name": "ElementaryTypeName",
+                    "src": "170:4:7"
+                  }
+                ],
+                "id": 351,
+                "name": "VariableDeclaration",
+                "src": "170:15:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "offers",
+                  "scope": 360,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "mapping(uint256 => struct Dataset.Offer storage ref)",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "type": "mapping(uint256 => struct Dataset.Offer storage ref)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 352,
+                        "name": "ElementaryTypeName",
+                        "src": "205:4:7"
+                      },
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Offer",
+                          "referencedDeclaration": 347,
+                          "type": "struct Dataset.Offer storage pointer"
+                        },
+                        "id": 353,
+                        "name": "UserDefinedTypeName",
+                        "src": "213:5:7"
+                      }
+                    ],
+                    "id": 354,
+                    "name": "Mapping",
+                    "src": "196:23:7"
+                  }
+                ],
+                "id": 355,
+                "name": "VariableDeclaration",
+                "src": "196:30:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "offers_key",
+                  "scope": 360,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 356,
+                    "name": "ElementaryTypeName",
+                    "src": "245:4:7"
+                  }
+                ],
+                "id": 357,
+                "name": "VariableDeclaration",
+                "src": "245:15:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "offers_length",
+                  "scope": 360,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 358,
+                    "name": "ElementaryTypeName",
+                    "src": "270:4:7"
+                  }
+                ],
+                "id": 359,
+                "name": "VariableDeclaration",
+                "src": "270:18:7"
+              }
+            ],
+            "id": 360,
+            "name": "StructDefinition",
+            "src": "117:178:7"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Dataset.Token",
+              "name": "Token",
+              "scope": 386,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "tokenContract",
+                  "scope": 385,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 361,
+                    "name": "ElementaryTypeName",
+                    "src": "325:7:7"
+                  }
+                ],
+                "id": 362,
+                "name": "VariableDeclaration",
+                "src": "325:21:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "symbolName",
+                  "scope": 385,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 363,
+                    "name": "ElementaryTypeName",
+                    "src": "356:6:7"
+                  }
+                ],
+                "id": 364,
+                "name": "VariableDeclaration",
+                "src": "356:17:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "currentBuyPrice",
+                  "scope": 385,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 365,
+                    "name": "ElementaryTypeName",
+                    "src": "384:4:7"
+                  }
+                ],
+                "id": 366,
+                "name": "VariableDeclaration",
+                "src": "384:20:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "lowestBuyPrice",
+                  "scope": 385,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 367,
+                    "name": "ElementaryTypeName",
+                    "src": "415:4:7"
+                  }
+                ],
+                "id": 368,
+                "name": "VariableDeclaration",
+                "src": "415:19:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "amountBuyPrice",
+                  "scope": 385,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 369,
+                    "name": "ElementaryTypeName",
+                    "src": "445:4:7"
+                  }
+                ],
+                "id": 370,
+                "name": "VariableDeclaration",
+                "src": "445:19:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "currentSellPrice",
+                  "scope": 385,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 371,
+                    "name": "ElementaryTypeName",
+                    "src": "476:4:7"
+                  }
+                ],
+                "id": 372,
+                "name": "VariableDeclaration",
+                "src": "476:21:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "highestSellPrice",
+                  "scope": 385,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 373,
+                    "name": "ElementaryTypeName",
+                    "src": "508:4:7"
+                  }
+                ],
+                "id": 374,
+                "name": "VariableDeclaration",
+                "src": "508:21:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "amountSellPrice",
+                  "scope": 385,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 375,
+                    "name": "ElementaryTypeName",
+                    "src": "540:4:7"
+                  }
+                ],
+                "id": 376,
+                "name": "VariableDeclaration",
+                "src": "540:20:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "buyBook",
+                  "scope": 385,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "mapping(uint256 => struct Dataset.OrderBook storage ref)",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "type": "mapping(uint256 => struct Dataset.OrderBook storage ref)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 377,
+                        "name": "ElementaryTypeName",
+                        "src": "588:4:7"
+                      },
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "OrderBook",
+                          "referencedDeclaration": 360,
+                          "type": "struct Dataset.OrderBook storage pointer"
+                        },
+                        "id": 378,
+                        "name": "UserDefinedTypeName",
+                        "src": "596:9:7"
+                      }
+                    ],
+                    "id": 379,
+                    "name": "Mapping",
+                    "src": "580:26:7"
+                  }
+                ],
+                "id": 380,
+                "name": "VariableDeclaration",
+                "src": "580:34:7"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "sellBook",
+                  "scope": 385,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "mapping(uint256 => struct Dataset.OrderBook storage ref)",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "type": "mapping(uint256 => struct Dataset.OrderBook storage ref)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 381,
+                        "name": "ElementaryTypeName",
+                        "src": "641:4:7"
+                      },
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "OrderBook",
+                          "referencedDeclaration": 360,
+                          "type": "struct Dataset.OrderBook storage pointer"
+                        },
+                        "id": 382,
+                        "name": "UserDefinedTypeName",
+                        "src": "649:9:7"
+                      }
+                    ],
+                    "id": 383,
+                    "name": "Mapping",
+                    "src": "633:26:7"
+                  }
+                ],
+                "id": 384,
+                "name": "VariableDeclaration",
+                "src": "633:35:7"
+              }
+            ],
+            "id": 385,
+            "name": "StructDefinition",
+            "src": "301:374:7"
+          }
+        ],
+        "id": 386,
+        "name": "ContractDefinition",
+        "src": "26:651:7"
+      }
+    ],
+    "id": 387,
+    "name": "SourceUnit",
+    "src": "0:679:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {
+    "1516514362421": {
+      "events": {},
+      "links": {},
+      "address": "0xfb0a4e5bbc481ae30826742c325ac26442cf0253"
+    }
+  },
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-01-21T05:59:46.484Z"
+}
