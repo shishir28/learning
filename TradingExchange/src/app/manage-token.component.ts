@@ -4,7 +4,7 @@ import {TokenManagementService}  from './shared/services/token-management.servic
 @Component({
   selector: 'app-manage-token',
   templateUrl: './manage-token.component.html',
-  styleUrls: ['./manage-token.component.css']
+ // styleUrls: ['./manage-token.component.css']
 })
 export class ManageTokenComponent implements OnInit {
 

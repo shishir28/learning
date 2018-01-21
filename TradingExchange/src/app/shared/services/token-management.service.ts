@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import * as Web3  from 'web3';
 import * as contract  from 'truffle-contract';
 
-import * as tokenManagementArtifacts  from '../../../../build/contracts/TokenManagement.json';
+import * as exchangeArtifacts  from '../../../../build/contracts/Exchange.json';
 
 declare var window :any;
 @Injectable()
 export class TokenManagementService {
-  tokenManagementContract = contract(tokenManagementArtifacts);
+  tokenManagementContract = contract(exchangeArtifacts);
   web3Provider:any;
   web3:any;
 
@@ -39,10 +39,6 @@ export class TokenManagementService {
      });
     })
     .then(function (data) {
-     return  chainInstance.getSymbolIndex(symbolName  ,{
-      from: this.web3.eth.accounts[1],gas:3000000
-   }     )
-    }).then(function (data) {
       console.log(data);
     });
   }

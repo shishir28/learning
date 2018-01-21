@@ -163,7 +163,228 @@
     "name": "solc",
     "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "1516517881150": {
+      "events": {
+        "0x941296a39ea107bde685522318a4b6c2b544904a5dd82a512748ca2cf839bef7": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogUint",
+          "type": "event"
+        },
+        "0x6a837ff3973aa4181e7b9f07756f8b7ee366dd85a36655d2cb42cd47f10b9638": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "",
+              "type": "int256"
+            }
+          ],
+          "name": "LogInt",
+          "type": "event"
+        },
+        "0xe8407a0209fa99ec3a7228aff140c3d3e68bd279391739c7e0b65cd406cc93b5": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "",
+              "type": "bytes"
+            }
+          ],
+          "name": "LogBytes",
+          "type": "event"
+        },
+        "0x02d93529bba9d141e5e06733c52c7e6fbcb1149586adb5c24064b522ab26f1d7": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "name": "LogBytes32",
+          "type": "event"
+        },
+        "0x62ddffe5b5108385f7a590f100e1ee414ad9551a31f089e64e82998440785e1e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "name": "LogAddress",
+          "type": "event"
+        },
+        "0x4c34c2f9a78632f29fa59aaed5514cb742fd9fbcfd7ccc2c03c85f2bbc621c47": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "name": "LogBool",
+          "type": "event"
+        }
+      },
+      "links": {
+        "Utils": "0x289977f7ecf9dac18582705752ee9354a5e43b01"
+      },
+      "address": "0x97b46f89d5cb69b448dd13398081a088000d52d7"
+    },
+    "1516520257500": {
+      "events": {
+        "0x941296a39ea107bde685522318a4b6c2b544904a5dd82a512748ca2cf839bef7": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogUint",
+          "type": "event"
+        },
+        "0x6a837ff3973aa4181e7b9f07756f8b7ee366dd85a36655d2cb42cd47f10b9638": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "",
+              "type": "int256"
+            }
+          ],
+          "name": "LogInt",
+          "type": "event"
+        },
+        "0xe8407a0209fa99ec3a7228aff140c3d3e68bd279391739c7e0b65cd406cc93b5": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "",
+              "type": "bytes"
+            }
+          ],
+          "name": "LogBytes",
+          "type": "event"
+        },
+        "0x02d93529bba9d141e5e06733c52c7e6fbcb1149586adb5c24064b522ab26f1d7": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "name": "LogBytes32",
+          "type": "event"
+        },
+        "0x62ddffe5b5108385f7a590f100e1ee414ad9551a31f089e64e82998440785e1e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "name": "LogAddress",
+          "type": "event"
+        },
+        "0x4c34c2f9a78632f29fa59aaed5514cb742fd9fbcfd7ccc2c03c85f2bbc621c47": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "name": "LogBool",
+          "type": "event"
+        }
+      },
+      "links": {
+        "Utils": "0x39583f8d119ebd10c95939c5e1133bada93e11a8"
+      },
+      "address": "0x0c61eb3a6bbc1b0ab8fca5c9263da78379c29dc6"
+    }
+  },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-01-21T05:59:46.480Z"
+  "updatedAt": "2018-01-21T08:38:47.958Z"
 }

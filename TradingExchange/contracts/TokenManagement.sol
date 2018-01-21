@@ -17,7 +17,7 @@ contract TokenManagement {
         return true;
     }
 
-    function getSymbolIndex(string _symbolName) constant returns (uint8) {
+    function getSymbolIndex(string _symbolName) internal returns (uint8) {
         for (var index = 0; index < symbolNameIndex; index++) {
             if (Utils.stringsEqual(_symbolName, tokens[index].symbolName)) {
                 return index;
