@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
-import "./ERC20.sol";
 import  "zeppelin-solidity/contracts/ownership/Ownable.sol";
+import "./ERC20.sol";
 
 contract MonadToken is ERC20, Ownable {
   string public constant name = "Monad Token";
@@ -59,5 +59,4 @@ contract MonadToken is ERC20, Ownable {
     Approval(msg.sender, spender, value);
     return true;
   }
-
 }
