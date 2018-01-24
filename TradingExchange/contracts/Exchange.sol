@@ -173,7 +173,7 @@ contract Exchange {
         return (priceBuyArray,volumeBuyArray);
     }
 
-     function getSellOrderBook(string _symbolName) constant returns(uint[], uint[]) {
+    function getSellOrderBook(string _symbolName) constant returns(uint[], uint[]) {
         uint8 symbolNameIndex = getSymbolIndex(_symbolName);
 
         uint[] memory priceSellArray = new uint[](tokens[symbolNameIndex].amountSellPrices);
@@ -206,4 +206,31 @@ contract Exchange {
         }
         return (priceSellArray,volumeSellArray);
     }
+
+    function cancelOrder(string _symbolName, bool _isSellOrder, uint _priceInWei, uint _offerKey) {
+        uint8 symbolNameIndex = getSymbolIndex(_symbolName);
+
+        if(_isSellOrder) {
+             var currentSellBook = tokens[symbolNameIndex].sellBook[_priceInWei];
+             require(currentSellBook.offers[_offerKey].who == msg.sender);
+             var tokenAmount =  currentSellBook.offers[_offerKey].amount ;
+             var currentTokenBalance = tokenBalance[msg.sender][symbolNameIndex];
+             require(currentTokenBalance+tokenAmount >= currentTokenBalance);
+
+             currentTokenBalance += tokenAmount;
+             currentSellBook.offers[_offerKey].amount = 0;
+             SellOrderCanceled(symbolNameIndex,_priceInWei,_offerKey);
+
+        }else {
+            var currentBuyBook = tokens[symbolNameIndex].buyBook[_priceInWei];
+             require(currentBuyBook.offers[_offerKey].who == msg.sender);
+             var etherRefund = currentBuyBook.offers[_offerKey].amount*_priceInWei;
+             require(etherBalance[msg.sender]+etherRefund >= etherBalance[msg.sender]);
+             etherBalance[msg.sender] +=  etherRefund;
+             currentBuyBook.offers[_offerKey].amount = 0;
+             BuyOrderCanceled(symbolNameIndex,_priceInWei,_offerKey);
+        }
+        
+    }
+
 }
