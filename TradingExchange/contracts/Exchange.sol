@@ -84,6 +84,7 @@ contract Exchange {
 
     // -------------------------------Balance Management  -------------------------------
 
+
     function depositEther() payable {
         require((etherBalance[msg.sender] + msg.value) >= etherBalance[msg.sender]);
         etherBalance[msg.sender] += msg.value;

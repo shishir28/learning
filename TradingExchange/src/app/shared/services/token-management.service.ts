@@ -34,7 +34,7 @@ export class TokenManagementService extends BaseService {
     }).then(function (data) {
       alert('Token Approved!')
       console.log(data);
-      return this. updateTokenBalance();
+      return this.updateTokenBalance();
       
     });
   }
@@ -49,7 +49,7 @@ export class TokenManagementService extends BaseService {
     }).then(function (data) {
       alert('Token Sent!')
       console.log(data);
-      return this. updateTokenBalance();
+      return this.updateTokenBalance();
     });
   }
 
