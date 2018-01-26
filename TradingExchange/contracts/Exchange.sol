@@ -178,9 +178,7 @@ contract Exchange {
 
         uint[] memory priceSellArray = new uint[](tokens[symbolNameIndex].amountSellPrices);
         uint[] memory volumeSellArray = new uint[](tokens[symbolNameIndex].amountSellPrices);
-
         uint currentSellOffer = tokens[symbolNameIndex].currentSellPrice;
-
         uint counter = 0;
 
         if (tokens[symbolNameIndex].currentSellPrice > 0) {
@@ -308,7 +306,7 @@ contract Exchange {
                 uint  sellPrice = tokens[symbolNameIndex].currentSellPrice ;
                 bool found  = false;
                 while((sellPrice > 0) && (!found) ) {
-                    if(sellPrice <  _priceInWei &&  tokens[symbolNameIndex].sellBook[sellPrice].higherPrice  > _priceInWei ) {
+                    if (sellPrice < _priceInWei && tokens[symbolNameIndex].sellBook[sellPrice].higherPrice > _priceInWei) {
                         currentSellBook.lowerPrice = sellPrice;
                         currentSellBook.higherPrice = tokens[symbolNameIndex].sellBook[sellPrice].higherPrice;
                        
@@ -327,7 +325,7 @@ contract Exchange {
         uint8 symbolNameIndex = getSymbolIndex(_symbolName);
         uint requiredEtherAmount = 0;
 
-        if(tokens[symbolNameIndex].amountSellPrices==0 || tokens[symbolNameIndex].currentSellPrice > _priceInWei) {
+        if (tokens[symbolNameIndex].amountSellPrices==0 || tokens[symbolNameIndex].currentSellPrice > _priceInWei) {
             requiredEtherAmount = _amount * _priceInWei;
             require(requiredEtherAmount >= _amount);
             require(requiredEtherAmount >= _priceInWei);
@@ -341,13 +339,13 @@ contract Exchange {
             uint totalAvailableEther = 0;
             uint currentSellPrice = tokens[symbolNameIndex].currentSellPrice;
             uint amountNecessary = _amount;
-            uint offersKey ;
+            uint offersKey;
 
-            while(currentSellPrice < _priceInWei && amountNecessary > 0) {
+            while (currentSellPrice < _priceInWei && amountNecessary > 0) {
                 offersKey = tokens[symbolNameIndex].sellBook[currentSellPrice].offersKey;
-                while(offersKey <= tokens[symbolNameIndex].sellBook[currentSellPrice].offersLength && amountNecessary > 0){
+                while (offersKey <= tokens[symbolNameIndex].sellBook[currentSellPrice].offersLength && amountNecessary > 0){
                     uint volumePriceFromAddress = tokens[symbolNameIndex].sellBook[currentSellPrice].offers[offersKey].amount;
-                    if(volumePriceFromAddress <= amountNecessary) {
+                    if (volumePriceFromAddress <= amountNecessary) {
                         totalAvailableEther = volumePriceFromAddress * currentSellPrice;
                         require(etherBalance[msg.sender] >= totalAvailableEther);
                         require(etherBalance[msg.sender] - totalAvailableEther >= etherBalance[msg.sender]);
@@ -373,11 +371,11 @@ contract Exchange {
                         SellOrderFulfilled(symbolNameIndex, amountNecessary,currentSellPrice, offersKey);
                     }
 
-                    if((offersKey == tokens[symbolNameIndex].sellBook[currentSellPrice].offersLength) && 
+                    if ((offersKey == tokens[symbolNameIndex].sellBook[currentSellPrice].offersLength) && 
                        ( tokens[symbolNameIndex].sellBook[currentSellPrice].offers[offersKey].amount == 0) ) {
                            tokens[symbolNameIndex].amountSellPrices--;
 
-                           if(currentSellPrice == tokens[symbolNameIndex].sellBook[currentSellPrice].higherPrice || tokens[symbolNameIndex].buyBook[currentSellPrice].higherPrice == 0 ) {
+                           if (currentSellPrice == tokens[symbolNameIndex].sellBook[currentSellPrice].higherPrice || tokens[symbolNameIndex].buyBook[currentSellPrice].higherPrice == 0) {
                                 tokens[symbolNameIndex].currentSellPrice = 0;
                            } else {
                                tokens[symbolNameIndex].currentSellPrice = tokens[symbolNameIndex].sellBook[currentSellPrice].higherPrice;
@@ -389,7 +387,7 @@ contract Exchange {
                 currentSellPrice = tokens[symbolNameIndex].currentSellPrice;
             } // end of outer  while  loop 
 
-            if(amountNecessary > 0) {
+            if (amountNecessary > 0) {
                 buyToken(_symbolName,_priceInWei,amountNecessary);
             }
         }
@@ -400,7 +398,7 @@ contract Exchange {
         uint requiredEtherAmount = 0;
         uint totalAvailableEther = 0;
 
-        if(tokens[symbolNameIndex].amountBuyPrices == 0 || tokens[symbolNameIndex].currentBuyPrice < _priceInWei) {
+        if (tokens[symbolNameIndex].amountBuyPrices == 0 || tokens[symbolNameIndex].currentBuyPrice < _priceInWei) {
             requiredEtherAmount = _amount * _priceInWei;
             require(requiredEtherAmount >= _amount);
             require(requiredEtherAmount >= _priceInWei);
@@ -416,9 +414,9 @@ contract Exchange {
             uint amountNecessary = _amount;
             uint offersKey;
 
-            while(currentBuyPrice >= _priceInWei && amountNecessary > 0) {
+            while (currentBuyPrice >= _priceInWei && amountNecessary > 0) {
                 offersKey = tokens[symbolNameIndex].buyBook[currentBuyPrice].offersKey;
-                while(offersKey <= tokens[symbolNameIndex].buyBook[currentBuyPrice].offersLength && amountNecessary > 0) {
+                while (offersKey <= tokens[symbolNameIndex].buyBook[currentBuyPrice].offersLength && amountNecessary > 0) {
 
                     uint volumePriceFromAddress = tokens[symbolNameIndex].buyBook[currentBuyPrice].offers[offersKey].amount;
 
@@ -450,15 +448,15 @@ contract Exchange {
                         amountNecessary = 0;
                     }
 
-                    if((offersKey == tokens[symbolNameIndex].buyBook[currentBuyPrice].offersLength) && 
+                    if ((offersKey == tokens[symbolNameIndex].buyBook[currentBuyPrice].offersLength) && 
                        (tokens[symbolNameIndex].buyBook[currentBuyPrice].offers[offersKey].amount == 0)) {
                            tokens[symbolNameIndex].amountBuyPrices--;
 
-                           if(currentBuyPrice == tokens[symbolNameIndex].buyBook[currentBuyPrice].lowerPrice || tokens[symbolNameIndex].buyBook[currentBuyPrice].lowerPrice == 0 ) {
+                           if (currentBuyPrice == tokens[symbolNameIndex].buyBook[currentBuyPrice].lowerPrice || tokens[symbolNameIndex].buyBook[currentBuyPrice].lowerPrice == 0) {
                                 tokens[symbolNameIndex].currentBuyPrice = 0;
                            } else {
                                tokens[symbolNameIndex].currentBuyPrice = tokens[symbolNameIndex].buyBook[currentBuyPrice].lowerPrice;
-                               tokens[symbolNameIndex].buyBook[tokens[symbolNameIndex].buyBook[currentBuyPrice].lowerPrice].higherPrice =  tokens[symbolNameIndex].currentBuyPrice;
+                               tokens[symbolNameIndex].buyBook[tokens[symbolNameIndex].buyBook[currentBuyPrice].lowerPrice].higherPrice = tokens[symbolNameIndex].currentBuyPrice;
                            }
                     }
                     offersKey++;
@@ -466,7 +464,7 @@ contract Exchange {
                 currentBuyPrice = tokens[symbolNameIndex].currentBuyPrice;
             } // end of outer  while  loop 
 
-            if(amountNecessary > 0) {
+            if (amountNecessary > 0) {
                 sellToken(_symbolName,_priceInWei,amountNecessary);
             }
         }

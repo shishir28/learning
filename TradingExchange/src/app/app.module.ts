@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Routes,RouterModule } from '@angular/router';
 
+import {AccountService} from './shared/services/account.service';
+
 import {TokenManagementService} from './shared/services/token-management.service';
 import { AppComponent } from './app.component';
 import { ManageTokenComponent } from './manage-token.component';
@@ -22,7 +24,7 @@ import {routes} from './app.routing.module';
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [TokenManagementService],
+  providers: [ AccountService, TokenManagementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
