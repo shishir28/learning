@@ -1,0 +1,78 @@
+<div>
+    <section class="row  placeholders">
+        <div class="col-lg-6   paymentPlaceholder">
+           
+            <h3 class="lbl_color" style="margin-bottom:10px">{{'paymentDetail.lblMain' | translate}}</h3>
+            
+            <form class="form-horizontal" [formGroup]="paymentForm" (ngSubmit)="submitPayment(paymentForm.value)">
+                <div class="form-group  required">
+                    <div class="row row-bottom-margin">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <label for="typReq" class="frm_lbl">{{'paymentDetail.lblAccountName' | translate}}</label>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="text" class="form-control" formControlName="txtAccountName" [(ngModel)]="currentPayment.accountName">
+                            <div class="alert alert-danger" role="alert" *ngIf="((!paymentForm.controls['txtAccountName'].valid )  && (paymentForm.controls['txtAccountName'].touched)) || accountNameNotFound">{{'paymentDetail.message.accountNameWarning' | translate}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <div class="row row-bottom-margin">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <label for="slsLd" class="frm_lbl">{{'paymentDetail.lblAccountNumber' | translate}}</label>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="text" class="form-control" formControlName="txtAccountNumber" pattern="\d{6,10}" [(ngModel)]="currentPayment.accountNumber">
+                            <div class="alert alert-danger" role="alert" *ngIf="((!paymentForm.controls['txtAccountNumber'].valid )  && (paymentForm.controls['txtAccountNumber'].touched)) || accountNumberNotFound">{{'paymentDetail.message.accountNumberWarning' | translate}}</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group required">
+                    <div class="row row-bottom-margin">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <label class="frm_lbl">{{'paymentDetail.lblBSB' | translate}}</label>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="text" class="form-control" pattern="^\d{3}-?\d{3}$" formControlName="txtBSB" [(ngModel)]="currentPayment.BSB">
+                            <div id ="alertBSB" class="alert alert-danger" role="alert" *ngIf="((!paymentForm.controls['txtBSB'].valid )  && (paymentForm.controls['txtBSB'].touched)) || BSBNotFound">{{'paymentDetail.message.BSBWarning' | translate}}</div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="row row-bottom-margin">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <label class="frm_lbl">{{'paymentDetail.lblReference' | translate}}</label>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="text" class="form-control" formControlName="txtReference" [(ngModel)]="currentPayment.reference">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group required">
+                    <div class="row row-bottom-margin">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <label class="frm_lbl">{{'paymentDetail.lblAmount' | translate}}</label>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="text" class="form-control" msNumberFormatter formControlName="numAmount" (change)="onAmountChange($event)" />
+                            <div class="alert alert-danger" role="alert" *ngIf="((!paymentForm.controls['numAmount'].valid )  && (paymentForm.controls['numAmount'].touched)) || invalidAmount">{{'paymentDetail.message.invalidAmountWarning' | translate}}</div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group clearfix">
+                        <div class="alert alert-danger" role="alert" *ngIf="serverErrorMessage">serverErrorMessage</div>
+                    <div style="margin-top: 50px">
+                        <button type="submit" id="submitPayment" class="btn btn-primary k-primary pull-right" style="margin-left: 8px;" [disabled]="(!paymentForm.valid) || (submitClicked)">{{'paymentDetail.btnSubmit' | translate}}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

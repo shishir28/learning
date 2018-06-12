@@ -1,0 +1,41 @@
+{
+  "general": {
+    "appTitle": "Bank App",
+    "okButton": "OK",
+    "cancelButton": "Canel",
+    "yesButton": "Yes",
+    "noButton": "No",
+    "confirmTitle": "Confirm",
+    "informationTitle": "Information!",
+    "home": "Home",
+    "footer": "Copyright © 2018 Fictitious Bank. All rights reserved.",
+    "dataloadingMessage": "Fetching data for you...",
+    "submitSucessMessage": "Payment done !",
+    "btAdd": "New Payment",
+    
+    "errorMessages": {
+      "problem": "Houston, we have a problem",
+      "unauthorized": "You are not authorized to view this page.",
+      "internalServerError": "We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.",
+      "notFound": "We can't seem to find you are looking for.",
+      "takeHome": "Let us take you home.",
+      "noDataFound": "No Data Found."
+    }
+  },
+    "paymentDetail": {
+      "lblMain": "New Payment Detail",
+      "lblAccountNumber":"Account Number",
+      "lblAccountName":"Account Name",
+      "lblBSB":"BSB",
+      "lblReference":"Reference",
+      "lblAmount":"Amount",      
+      "btnSubmit": "Submit Payment",
+      "message":{
+        "accountNameWarning":"Please mention payee account name",
+        "accountNumberWarning":"Please mention valid 6 to 10 digit payee account number",
+        "BSBWarning":"Please mention valid 6 digit BSB detail for payee",
+        "invalidAmountWarning":"Amount must be more than 1"
+
+      }
+    }
+}

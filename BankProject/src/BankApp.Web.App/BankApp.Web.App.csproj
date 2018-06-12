@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="EmailTemplates\**" />
+    <Content Remove="EmailTemplates\**" />
+    <EmbeddedResource Remove="EmailTemplates\**" />
+    <None Remove="EmailTemplates\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.0.2" />
+    <PackageReference Include="EPPlus.Core" Version="1.5.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="1.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nlog.config" CopyToOutputDirectory="Always" />
+    <None Include="nlog.config" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BankApp.Common\BankApp.Common.csproj" />
+    <ProjectReference Include="..\BankApp.Domain.Entities\BankApp.Domain.Entities.csproj" />
+    <ProjectReference Include="..\BankApp.Domain.Interfaces\BankApp.Domain.Interfaces.csproj" />
+    <ProjectReference Include="..\BankApp.Infrastructure.DependencyResolver\BankApp.Infrastructure.DependencyResolver.csproj" />
+    <ProjectReference Include="..\BankApp.Services.Interface\BankApp.Services.Interface.csproj" />
+  </ItemGroup>
+</Project>
