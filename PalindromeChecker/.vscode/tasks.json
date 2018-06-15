@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "taskName": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/PalindromeApp.Web.App/ PalindromeApp.Web.App.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }       
+    ]
+}

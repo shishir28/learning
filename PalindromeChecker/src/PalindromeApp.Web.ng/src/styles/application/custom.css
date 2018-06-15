@@ -1,0 +1,327 @@
+﻿body, html{
+  font-size:90% !important;
+}
+body, html{
+  font-size:90% !important;
+}
+.navbar {
+  padding: 1rem;
+  background-color: #6e42f4 !important;
+  color: #ffffff;
+  text-align: center;
+  height: 60px !important;
+  overflow: hidden;
+  }
+
+ .k-primary:focus {
+    background-color: #6e42f4;
+    color: white;
+}
+.k-primary:hover {
+  background-color: #6e42f4;
+  color: white;
+}
+
+ .k-primary:active {
+    background-color: #6e42f4;
+    background-image: none;
+    color: white;
+}
+  .k-primary {
+  background-color: #6e42f4;
+  }
+  .margin_btm {
+  margin-bottom: 15px;
+  }
+  
+  .taStyle {
+  font-size: 24px;
+  color: #ffffff;
+  }
+  .navLinks {
+  font-size: 16px;
+  color: #ffffff;
+  margin-left: 10px;
+  }
+  .navLinks_Sml {
+  font-size: 16px;
+  color: #ffffff;
+  }
+  .lbl_color {
+  color: #6e42f4;
+  font-weight: bold;
+  }
+  
+  .frm_lbl {
+  margin-top: 10px;
+  font-weight: 700;
+  max-width: 100%;
+  text-align: right!important;
+  font-family:  'Arial'!important;
+  }
+  .heading_spacer {
+  margin-bottom: 23px;
+  margin-top: 41px;
+  }
+  .extra_addon {
+  margin-left: 5px;
+  border-radius: 50% !important;
+  background-color: #50a750;
+  color: #ffffff;
+  line-height: 19px;
+  border: none;
+  cursor: pointer;
+  }
+  .slidethispart {
+  border: 1px solid #D0DEEE;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 10px
+  }
+  .myreq {
+  color: #DE5448;
+  font-size: .4em;
+  position: relative;
+  top: -12px;
+  }
+  .switch {
+  position: relative;
+  height: 26px;
+  width: 120px;
+  background: rgba(0, 0, 0, 0.11);
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  }
+ 
+  .tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-color: #eceeef;
+  width: 100%;
+  }
+  
+  .tg td {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  padding: 2px 2px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal;
+  border-color: #eceeef;
+  color: #444;
+  background-color: #F7FDFA;
+  }
+  .tg th {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 5px 5px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal;
+  border-color: #539bda;
+  color: #fff;
+  background-color: #428bca;
+  }
+  .tg .tg-yw4l {
+  vertical-align: top
+  }
+  table tr:nth-child(odd) td {
+  background-color: white;
+  }
+  table tr:nth-child(even) td {
+  background-color: #f1f7Fb;
+  }
+  @media screen and (max-width: 767px) {
+  .tg {
+  width: auto !important;
+  }
+  .tg col {
+  width: auto !important;
+  }
+  .tg-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: -10px
+  }
+  }
+  
+  .custom-tab>li>a {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  }
+  .custom-tab>li {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  }
+  .custom-tab>li>a:link {
+  border-top: 3px solid #00bfff;
+  border-right: 1px solid #00bfff;
+  border-left: 1px solid #00bfff;
+  }
+  .nav-tabs>li.active>a,
+  .nav-tabs>li.active>a:focus,
+  .nav-tabs>li.active>a:hover,
+  .nav-tabs>li.active>a:visited {
+  background-color: #00bfff;
+  border-top: 3px solid #00bfff;
+  border-right: 1px solid #00bfff;
+  border-left: 1px solid #00bfff;
+  color: #FFF;
+  background-color: #00bfff;
+  }
+  .link-lable {
+  text-decoration: none;
+  color: #000;
+  }
+  @media screen and (max-width: 767px) {
+  .link-lable {
+  display: none;
+  }
+  }
+  .panel-tabs {
+  position: relative;
+  bottom: 30px;
+  clear: both;
+  border-bottom: 1px solid transparent;
+  left: 20px;
+  }
+  .panel-tabs>li {
+  float: left;
+  margin-bottom: -1px;
+  }
+  .panel-tabs>li>a {
+  margin-right: 2px;
+  margin-top: 4px;
+  line-height: .85;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  color: #ffffff;
+  margin-right: 25px;
+  text-decoration: none;
+  }
+  .panel-tabs>li>a:hover {
+  border-color: transparent;
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: none;
+  }
+  .panel-tabs>li.active>a,
+  .panel-tabs>li.active>a:hover,
+  .panel-tabs>li.active>a:focus {
+  color: #fff;
+  cursor: default;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 6px;
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, .23);
+  border-bottom-color: transparent;
+  padding: 6px;
+  text-decoration: none;
+  }
+  .panel-primary>.panel-heading {
+  color: #fff;
+  background-color: #6e42f4;
+  border-color: #6e42f4;
+  padding: 4px;
+  }
+  .comments_heading {
+  font-size: 18px;
+  padding: 8px 12px;
+  display: block;
+  }
+
+.form-group.required .control-label:after {
+  content:"*";
+  color:red;
+}
+.form-group.required .frm_lbl:after {
+  content:"*";
+  color:red;
+}
+.form-group {
+  margin-bottom: 1;
+}
+.row-bottom-margin {
+  margin-bottom:15px;
+}
+
+.labelOverlayButton {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.table-cat {
+  width: 100%!important
+}
+.thead-cat th td {
+  padding: 0!important
+}
+
+.form-group {
+  margin-bottom: -1rem!important;
+}
+
+.palindromePlaceholder  {
+  border:1px solid #d1d1d1; 
+  margin:70px 10px; 
+  padding:20px; 
+  border-radius:10px 
+}
+
+
+.thead-inverse th {
+  color: #fff;
+  background-color: #6e42f4!important;
+}
+
+.content-wrapper{
+  min-height: 100%;
+  height: 100%;
+  margin: 0 auto -5px; 
+}
+
+.main-footer{ 
+  position: fixed;
+  padding: 0 10px 0 10px;
+  left: 0px;
+  bottom: 5px;
+  width: 100%;
+  z-index: 820!important;
+}
+
+table.dataTable.no-footer {
+  border-bottom: 1px solid #6e42f4!important;
+}
+
+.dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_paginate, .dataTables_wrapper .dataTables_processing {
+  color: #6e42f4!important;
+}
+
+
+.dataTable thead th, table.dataTable thead td {
+  font-weight: normal!important;  
+  font-size: 12px!important;  
+}
+
+
+.dataTable tr.active td {
+  background-color: #8bafc7!important;
+  color: white;
+}
+
+
+.grid-no-data-found {
+  text-align: center!important; 
+  position: relative!important; 
+  left: 0!important;
+  right: 0!important;
+  top: 50%!important;
+  transform: translate(0, -50%)!important;
+}   

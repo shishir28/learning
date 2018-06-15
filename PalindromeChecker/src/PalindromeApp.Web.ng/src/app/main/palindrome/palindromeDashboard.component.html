@@ -1,0 +1,29 @@
+<div class="col-lg-12" style="margin:70px 10px; padding:20px; ">
+
+    <div class="row col-lg-12" style="padding-right:0px">
+        <button type="button" id="newPalindrome" class="btn btn-primary k-primary pull-right" style="margin-bottom:10px" (click)="addNewPalindrome($event);">New Palindrome</button>
+    </div>
+
+
+    <div class="row col-lg-12" style="padding-right:0px" *ngIf="dataFound">
+        <table datatable [dtTrigger]="dtTrigger" [dtOptions]="dtOptions" class="table table-striped thead-inverse compact">
+            <thead scope="col">
+                <tr>
+                    <th>{{'palindromeDashboard.header.id' | translate}}</th>
+                    <th>{{'palindromeDashboard.header.palindromeValue' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let palindrome of palidromeList;let index = index">
+                    <td>{{ palindrome.id }}</td>
+                    <td>{{ palindrome.palindromeValue }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-12 grid-no-data-found " *ngIf="!dataFound">
+        <h4>
+            {{'palindromeDashboard.message.noDataFound' | translate}}
+        </h4>
+    </div>
+</div>

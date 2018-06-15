@@ -1,0 +1,41 @@
+{
+  "general": {
+    "appTitle": "Palindrome Checker App",
+    "okButton": "OK",
+    "cancelButton": "Canel",
+    "yesButton": "Yes",
+    "noButton": "No",
+    "confirmTitle": "Confirm",
+    "informationTitle": "Information!",
+    "home": "Home",
+    "footer": "Copyright © 2018 Fictitious Company. All rights reserved.",
+    "dataloadingMessage": "Fetching data for you...",
+    "submitSucessMessage": "Palindrome added !",
+    "btAdd": "New Palindrome",
+    "errorMessages": {
+      "problem": "Houston, we have a problem",
+      "unauthorized": "You are not authorized to view this page.",
+      "internalServerError": "We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.",
+      "notFound": "We can't seem to find you are looking for.",
+      "takeHome": "Let us take you home.",
+      "noDataFound": "No Data Found."
+    }
+  },
+  "palindromeDetail": {
+    "lblMain": "New Palindrome String",
+    "lblPalindromeValue": "Palindrome Value",
+    "btnSubmit": "Submit Palindrome",
+    "message": {
+      "PalindromeWarning": "Please enter string"
+    }
+  },
+  "palindromeDashboard": {
+    "header": {
+      "id": "Id",
+      "palindromeValue": "Palindrome Value"
+    },
+    "message": {
+      "noDataFound": " No saved Palindromes yet! Click on New Palindrom Button!"
+    }  
+  }
+}

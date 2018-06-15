@@ -1,0 +1,31 @@
+<div>
+    <section class="row  placeholders">
+        <div class="col-lg-6   palindromePlaceholder">
+
+            <h3 class="lbl_color" style="margin-bottom:10px">{{'palindromeDetail.lblMain' | translate}}</h3>
+
+            <form class="form-horizontal" [formGroup]="palindromeForm" (ngSubmit)="submitPalindrome(palindromeForm.value)">
+
+                <div class="form-group required">
+                    <div class="row row-bottom-margin">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <label class="frm_lbl">{{'palindromeDetail.lblPalindromeValue' | translate}}</label>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="text" class="form-control" formControlName="txtPalindromeValue" [(ngModel)]="currentPalindrome.palindromeValue"   (input) ="onPalindromeValueChange($event)"                        />
+                            <div id="alertPalindromeValue" class="alert alert-danger" role="alert" *ngIf="((!palindromeForm.controls['txtPalindromeValue'].valid )  && (palindromeForm.controls['txtPalindromeValue'].touched)) || palindromeValueNotFound">{{'palindromeDetail.message.PalindromeWarning' | translate}}</div>
+                        </div>
+                    </div>
+                </div>
+
+             
+                <div class="form-group clearfix">
+                    <div class="alert alert-danger" role="alert" *ngIf="serverErrorMessage">{{serverErrorMessage}}</div>
+                    <div style="margin-top: 50px">
+                        <button type="submit" id="submitPalindrome" class="btn btn-primary k-primary pull-right" style="margin-left: 8px;" [disabled]="(!palindromeForm.valid) || (submitClicked)">{{'palindromeDetail.btnSubmit' | translate}}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
