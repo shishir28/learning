@@ -1,0 +1,71 @@
+<div>
+    <section class="row  placeholders">
+        <div class="col-lg-6   formPlaceholder">
+
+            <h3 class="lbl_color" style="margin-bottom:10px">Compose Email</h3>
+
+            <form class="form-horizontal" [formGroup]="emailForm" (ngSubmit)="sendEmail(emailForm.value)">
+
+                <div class="form-group required">
+                    <div class="row row-bottom-margin">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <input type="email" class="form-control" placeholder="To"  formControlName="txtEmailTo" [(ngModel)]="currentEmail.toValue"
+                                (change)="onToValueChange($event)" />
+                            <div id="alertToValue" class="alert alert-danger" role="alert" *ngIf="((!emailForm.controls['txtEmailTo'].valid )  && (emailForm.controls['txtEmailTo'].touched)) || toValueHasError">To Receipient is required and should be valid email address</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row row-bottom-margin">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <input type="email" class="form-control" placeholder="CC" formControlName="txtEmailCC" [(ngModel)]="currentEmail.ccValue"
+                            (change)="onCCValueChange($event)"  />
+                            <div id="alertCCValue" class="alert alert-danger" role="alert" *ngIf="((!emailForm.controls['txtEmailCC'].valid )  && (emailForm.controls['txtEmailCC'].touched)) || ccValueHasError">CC Receipient should be valid email address</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row row-bottom-margin">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <input type="email" class="form-control" placeholder="BCC" formControlName="txtEmailBCC" [(ngModel)]="currentEmail.bccValue"
+                            (change)="onBCCValueChange($event)"  />
+                            <div id="alertCCValue" class="alert alert-danger" role="alert" *ngIf="((!emailForm.controls['txtEmailBCC'].valid )  && (emailForm.controls['txtEmailBCC'].touched)) || bccValueHasError">BCC Receipient should be valid email address</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="row row-bottom-margin">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <input type="text" class="form-control" placeholder="Subject" formControlName="txtEmailSubject" [(ngModel)]="currentEmail.subjectValue"
+                                 />
+                            <div id="alertSubjectValue" class="alert alert-danger" role="alert" *ngIf="((!emailForm.controls['txtEmailSubject'].valid )  && (emailForm.controls['txtEmailSubject'].touched))">Subject Is Required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row row-bottom-margin">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <textarea class="form-control" placeholder="Message" formControlName="txtEmailMessage" rows="20" [(ngModel)]="currentEmail.messageValue"
+                                ></textarea>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <div class="alert alert-danger" role="alert" *ngIf="serverErrorMessage">{{serverErrorMessage}}</div>
+                    <div style="margin-top: 50px">
+                        <button type="submit" id="submitEmail" class="btn btn-primary k-primary pull-right" style="margin-left: 8px;" [disabled]="(!emailForm.valid) || (submitClicked)">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

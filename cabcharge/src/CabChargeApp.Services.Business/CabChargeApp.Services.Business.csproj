@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="EPPlus.Core" Version="1.5.2" />
+    <PackageReference Include="RestSharp" Version="106.2.2" />
+    <PackageReference Include="Sendgrid" Version="9.9.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CabChargeApp.Domain.Entities\CabChargeApp.Domain.Entities.csproj" />
+    <ProjectReference Include="..\CabChargeApp.Services.Interface\CabChargeApp.Services.Interface.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="2.0.0" />
+  </ItemGroup>
+</Project>
