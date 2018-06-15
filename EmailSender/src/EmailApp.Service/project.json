@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0-*",
+  "description": "EmailApp.Service Service Application",
+    "authors": [ "Shishir Kumar Mishra" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "dependencies": {
+    "EmailApp.Common": "1.0.0-*",
+    "log4net": "2.0.3"
+  },
+
+  "commands": {
+    "EmailApp.Service": "EmailApp.Service"
+  },
+
+  "frameworks": {
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Messaging": "4.0.0.0",
+        "System.XML": "4.0.0.0",
+        "System.Xml.Serialization": "4.0.0.0"
+      }
+    }
+   
+  }
+}

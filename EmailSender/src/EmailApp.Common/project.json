@@ -1,0 +1,16 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "EmailApp.Common Class Library",
+  "authors": [ "Shishir Kumar Mishra" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "frameworks": {
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Messaging": "4.0.0.0"
+      }
+    }
+  }
+}
